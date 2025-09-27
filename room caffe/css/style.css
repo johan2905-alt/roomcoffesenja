@@ -1,3 +1,4 @@
+/* ================== ROOT & RESET ================== */
 :root {
   --primary: #b6895b;
   --bg: #010101;
@@ -35,29 +36,35 @@ body {
   z-index: 9999;
 }
 
-.navbar .navbar-logo {
+.navbar__logo {
   font-size: 2rem;
   font-weight: 700;
   color: white;
   font-style: italic;
 }
 
-.navbar .navbar-logo span {
+.navbar__logo span {
   color: rgb(58, 31, 1);
 }
 
-.navbar .navbar-nav a {
+.navbar__nav {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__nav a {
   color: #fff;
   display: inline-block;
   font-size: 1.3rem;
   margin: 0 1rem;
+  transition: color 0.3s;
 }
 
-.navbar .navbar-nav a:hover {
+.navbar__nav a:hover {
   color: rgb(58, 1, 1);
 }
 
-.navbar .navbar-nav a::after {
+.navbar__nav a::after {
   content: "";
   display: block;
   width: 100%;
@@ -67,17 +74,18 @@ body {
   transform-origin: right;
 }
 
-.navbar .navbar-nav a:hover::after {
+.navbar__nav a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.navbar .navbar-extra a {
+.navbar__extra a {
   color: #fff;
   margin: 0 0.5rem;
+  transition: color 0.3s;
 }
 
-.navbar .navbar-extra a:hover {
+.navbar__extra a:hover {
   color: rgb(184, 104, 0);
 }
 
@@ -110,14 +118,14 @@ body {
   );
 }
 
-.hero .content {
+.hero__content {
   padding: 1.4rem 7%;
   max-width: 60rem;
   position: relative;
   z-index: 1; /* teks muncul di atas overlay */
 }
 
-.hero .content h1 {
+.hero__content h1 {
   font-size: 5em;
   color: #cccccc;
   line-height: 1.2;
@@ -126,11 +134,11 @@ body {
   animation: glowPulse 2s infinite alternate;
 }
 
-.hero .content h1 span {
+.hero__content h1 span {
   color: rgb(110, 51, 11);
 }
 
-.hero .content p {
+.hero__content p {
   font-size: 1.6rem;
   margin-top: 1rem;
   line-height: 1.4;
@@ -140,7 +148,7 @@ body {
   mix-blend-mode: difference;
 }
 
-.hero .content .cta {
+.hero__cta {
   display: inline-block;
   padding: 1rem 3rem;
   font-size: 1.4rem;
@@ -179,55 +187,55 @@ body {
   padding: 5rem 7% 5rem;
   margin-bottom: 6rem;
   height: 90vh;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
-.about h2,
-.menu h2 {
+.about__title,
+.menu__title {
   text-align: center;
   font-size: 2.6rem;
   margin-bottom: 3rem;
 }
 
-.about h2 span,
-.menu h2 span {
+.about__title span,
+.menu__title span {
   color: rgb(58, 1, 1);
 }
 
-.about .row {
+.about__row {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-/* Gambar */
-.about .row .about-img {
+.about__img {
   flex: 1 1 25rem;
 }
 
-.about .row .about-img img {
+.about__img img {
   width: 100%;
   max-width: 300px;
   max-height: 200px;
   border-radius: 0.5rem;
 }
 
-/* Teks */
-.about .row .content {
-  flex: 1 1 50rem;
+.about__content {
   padding: 0 1rem;
 }
 
-.about .row .content h2 {
+.about__content h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
-.about .row .content h3 {
+.about__content h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-.about .row .content p {
+.about__content p {
   margin-bottom: 0.8rem;
   font-size: 1.3rem;
   font-weight: 100;
@@ -241,17 +249,17 @@ body {
   margin-bottom: 6rem;
 }
 
-.menu h2 {
+.menu__title {
   font-size: 2.6rem;
   margin-bottom: 1rem;
 }
 
-.menu h2 span {
+.menu__title span {
   color: #410000;
 }
 
-.menu p,
-.contact p {
+.menu__desc,
+.contact__desc {
   text-align: center;
   max-width: 30rem;
   margin: auto;
@@ -262,14 +270,14 @@ body {
 }
 
 /* Menu cards */
-.menu-cards {
+.menu__cards {
   margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
 }
 
-.card {
+.menu__card {
   background: #222;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -277,27 +285,27 @@ body {
   transition: transform 0.3s ease;
 }
 
-.card:hover {
+.menu__card:hover {
   transform: translateY(-8px);
 }
 
-.card img {
+.menu__card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
 
-.card-body {
+.menu__card-body {
   padding: 1.2rem;
 }
 
-.card-body h3 {
+.menu__card-body h3 {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
   color: #b6895b;
 }
 
-.card-body p {
+.menu__card-body p {
   font-size: 1.2rem;
   color: #ccc;
   line-height: 1.6;
@@ -310,19 +318,19 @@ body {
   margin-bottom: 6rem;
 }
 
-.contact h2 {
+.contact__title {
   font-size: 2.4rem;
   margin-bottom: 1rem;
   color: #f0f0f0;
 }
 
-.contact p {
+.contact__desc {
   margin-bottom: 2rem;
   font-size: 1.2rem;
   color: #ddd;
 }
 
-.contact-form {
+.contact__form {
   max-width: 500px;
   margin: auto;
   background: rgba(255, 255, 255, 0.05);
@@ -331,13 +339,13 @@ body {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.contact-form .input-box {
+.contact__input-box {
   position: relative;
   margin-bottom: 2rem;
 }
 
-.contact-form input,
-.contact-form textarea {
+.contact__form input,
+.contact__form textarea {
   width: 100%;
   padding: 1rem;
   border: 1px solid #666;
@@ -348,7 +356,7 @@ body {
   transition: 0.3s ease;
 }
 
-.contact-form label {
+.contact__form label {
   position: absolute;
   top: 50%;
   left: 1rem;
@@ -359,16 +367,16 @@ body {
   transition: 0.3s ease;
 }
 
-.contact-form input:focus,
-.contact-form textarea:focus {
+.contact__form input:focus,
+.contact__form textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 10px rgba(182, 137, 91, 0.7);
 }
 
-.contact-form input:focus + label,
-.contact-form input:valid + label,
-.contact-form textarea:focus + label,
-.contact-form textarea:valid + label {
+.contact__form input:focus + label,
+.contact__form input:valid + label,
+.contact__form textarea:focus + label,
+.contact__form textarea:valid + label {
   top: -10px;
   left: 0.8rem;
   font-size: 0.85rem;
@@ -378,7 +386,7 @@ body {
   border-radius: 0.2rem;
 }
 
-.contact-form .btn {
+.contact__btn {
   background: var(--primary);
   color: #fff;
   border: none;
@@ -389,12 +397,13 @@ body {
   transition: 0.3s ease;
 }
 
-.contact-form .btn:hover {
+.contact__btn:hover {
   background: #8d6844;
   box-shadow: 0 0 15px rgba(182, 137, 91, 0.7);
 }
 
-footer {
+/* ================== FOOTER ================== */
+.footer {
   background-color: var(--primary);
   text-align: center;
   padding: 2rem 1rem;
@@ -411,30 +420,29 @@ footer {
   z-index: 1000;
 }
 
-/* Saat muncul */
-footer.show {
+.footer--show {
   transform: translateY(0);
   opacity: 1;
 }
 
-footer .socials {
+.footer__socials {
   padding: 0.5rem 0;
   display: flex;
   justify-content: center;
   gap: 1rem;
 }
 
-footer .socials a {
+.footer__socials a {
   color: #fff;
   font-size: 1.6rem;
   transition: color 0.3s ease;
 }
 
-footer .socials a:hover {
+.footer__socials a:hover {
   color: black;
 }
 
-footer .links {
+.footer__links {
   margin: 0.5rem 0;
   display: flex;
   justify-content: center;
@@ -442,22 +450,22 @@ footer .links {
   flex-wrap: wrap;
 }
 
-footer .links a {
+.footer__links a {
   color: #fff;
   font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
-footer .links a:hover {
+.footer__links a:hover {
   color: black;
 }
 
-footer .credit {
+.footer__credit {
   font-size: 0.85rem;
   color: #eee;
 }
 
-footer .credit span {
+.footer__credit span {
   font-weight: bold;
   color: #ffd700;
 }
@@ -473,28 +481,60 @@ footer .credit span {
 
 /* Tablet */
 @media (max-width: 768px) {
-  .about .row {
+  .about-mobile-wrapper {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+  }
+  .about-mobile-wrapper__img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .about-mobile-wrapper__img img {
+    max-width: 180px;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  .about-mobile-wrapper__content {
+    width: 100%;
     text-align: center;
+    padding: 0;
   }
+}
 
-  .about .row .about-img img {
-    max-width: 220px;
-    height: fit-content;
+@media (min-width: 769px) {
+  .about-mobile-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    justify-content: center;
+    font-size: 1.8rem;
   }
-
-  .about .row .content h2 {
-    font-size: 2.5rem;
+  .about-mobile-wrapper__img {
+    display: flex;
+    justify-content: flex-end;
   }
-
-  .about .row .content p {
-    font-size: 1.4rem;
+  .about-mobile-wrapper__img img {
+    max-width: 300px;
+    max-height: 200px;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+  .about-mobile-wrapper__content {
+    text-align: left;
+    padding: 0 1rem;
+    flex: 1 1 25rem;
   }
 }
 
 /* Tablet & HP */
 @media (max-width: 768px) {
-  .navbar .navbar-nav {
+  .navbar__nav {
     position: absolute;
     top: 100%;
     right: -100%;
@@ -506,12 +546,12 @@ footer .credit span {
     transition: right 0.3s ease;
   }
 
-  .navbar .navbar-nav a {
+  .navbar__nav a {
     display: block;
     margin: 1.5rem;
   }
 
-  .navbar .navbar-nav.active {
+  .navbar__nav--active {
     right: 0;
   }
 
@@ -521,14 +561,84 @@ footer .credit span {
   }
 }
 
-.aboutclass {
+@media (max-width: 600px) {
+  .about,
+  .menu,
+  .contact {
+    padding: 2.5rem 2vw 2.5rem;
+    margin-bottom: 3rem;
+    height: auto;
+  }
+  .about-mobile-wrapper {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+  .about-mobile-wrapper__img img {
+    max-width: 90vw;
+    max-height: 160px;
+  }
+  .about-mobile-wrapper__content {
+    padding: 0;
+    font-size: 1.1rem;
+  }
+  .menu__cards {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .menu__card {
+    min-width: 0;
+    width: 100%;
+  }
+  .menu__card img {
+    height: 140px;
+  }
+  .menu__center {
+    padding: 0 0.5rem;
+  }
+  .contact__form {
+    padding: 1rem;
+    max-width: 98vw;
+  }
+  .footer {
+    font-size: 0.95rem;
+    padding: 1.2rem 0.5rem;
+  }
+  .footer__links {
+    gap: 0.7rem;
+  }
+  .footer__socials {
+    gap: 0.7rem;
+  }
+}
+@media (max-width: 400px) {
+  .about-mobile-wrapper__img img {
+    max-width: 98vw;
+    max-height: 110px;
+  }
+  .menu__card img {
+    height: 90px;
+  }
+  .contact__form {
+    padding: 0.5rem;
+  }
+}
+
+/* ================== UTILITY CLASSES ================== */
+.about__container {
   display: flex;
   align-content: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.abouttittle {
+.about__title {
   display: flex;
   justify-content: center;
-}     
+}
+
+.menu__center {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

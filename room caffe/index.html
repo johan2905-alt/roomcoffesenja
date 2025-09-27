@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,16 +20,16 @@
   <body>
     <!-- Navbar -->
     <nav class="navbar">
-      <a href="#" class="navbar-logo">roomcoffe<span>senja.</span></a>
+      <a href="#" class="navbar__logo">roomcoffe<span>senja.</span></a>
 
-      <div class="navbar-nav">
+      <div class="navbar__nav">
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Kontak</a>
       </div>
 
-      <div class="navbar-extra">
+      <div class="navbar__extra">
         <a href="#" id="search"><i data-feather="search"></i></a>
         <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
         <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
@@ -39,26 +39,25 @@
 
     <!-- Hero Section Start -->
     <section class="hero" id="home">
-      <main class="content">
+      <main class="hero__content">
         <h1>Secangkir Kopi, Awal dari Semua <span>Cerita</span></h1>
         <p>
           Rasakan hangatnya aroma kopi yang menenangkan sebelum melangkah
           menjalani hari.
         </p>
-        <a href="#" class="cta">Mari Kami Datang</a>
+        <a href="#" class="hero__cta">Mari Kami Datang</a>
       </main>
     </section>
     <!-- Hero Section End -->
 
     <!-- About Section Start -->
-    <section id="about" class="about aboutclass">
-      <h2 class="abouttittle"><span>Tentang</span> Kami</h2>
-
-      <div class="row">
-        <div class="about-img">
+    <section id="about" class="about">
+      <h2 class="about__title"><span>Tentang</span> Kami</h2>
+      <div class="about-mobile-wrapper">
+        <div class="about-mobile-wrapper__img">
           <img src="img/Latte-art.jpg" alt="Latte art kopi" />
         </div>
-        <div class="content">
+        <div class="about-mobile-wrapper__content">
           <h3>Kenapa Memilih Kopi Kami?</h3>
           <p>
             Biji kopi pilihan, diseduh dengan penuh cinta, bikin tiap tegukan
@@ -73,49 +72,51 @@
 
     <!-- Menu Section Start -->
     <section id="menu" class="menu">
-      <h2>Our <span>Menu</span></h2>
-      <p>
-        Nikmati berbagai pilihan menu spesial kami, dibuat dengan bahan
-        berkualitas dan penuh cita rasa.
-      </p>
+      <div class="menu__center">
+        <h2 class="menu__title">Our <span>Menu</span></h2>
+        <p class="menu__desc">
+          Nikmati berbagai pilihan menu spesial kami, dibuat dengan bahan
+          berkualitas dan penuh cita rasa.
+        </p>
 
-      <div class="menu-cards">
-        <div class="card">
-          <img src="img/americano.jpg" alt="Americano" />
-          <div class="card-body">
-            <h3>Americano</h3>
-            <p>Kopi hitam dengan rasa yang strong, cocok untuk memulai hari.</p>
-            <p>IDR 20k</p>
+        <div class="menu__cards">
+          <div class="menu__card">
+            <img src="img/americano.jpg" alt="Americano" />
+            <div class="menu__card-body">
+              <h3>Americano</h3>
+              <p>Kopi hitam dengan rasa yang strong, cocok untuk memulai hari.</p>
+              <p>IDR 20k</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card">
-          <img src="img/vanilla-latte.jpg" alt="Vanilla Latte" />
-          <div class="card-body">
-            <h3>Vanilla Latte</h3>
-            <p>Perpaduan kopi dan susu dengan sentuhan vanilla manis.</p>
-            <p>IDR 25k</p>
+          <div class="menu__card">
+            <img src="img/vanilla-latte.jpg" alt="Vanilla Latte" />
+            <div class="menu__card-body">
+              <h3>Vanilla Latte</h3>
+              <p>Perpaduan kopi dan susu dengan sentuhan vanilla manis.</p>
+              <p>IDR 25k</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card">
-          <img src="img/matcha-latte.jpg" alt="Matcha Latte" />
-          <div class="card-body">
-            <h3>Matcha Latte</h3>
-            <p>Gabungan antara susu creamy dan matcha berkualitas.</p>
-            <p>IDR 25k</p>
+          <div class="menu__card">
+            <img src="img/matcha-latte.jpg" alt="Matcha Latte" />
+            <div class="menu__card-body">
+              <h3>Matcha Latte</h3>
+              <p>Gabungan antara susu creamy dan matcha berkualitas.</p>
+              <p>IDR 25k</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card">
-          <img src="img/palm-sugar-coffe.jpg" alt="Palm Sugar Coffee" />
-          <div class="card-body">
-            <h3>Palm Sugar Coffee</h3>
-            <p>
-              Manis alami gula aren berpadu dengan pahit lembut kopi,
-              menciptakan rasa hangat yang bikin nagih.
-            </p>
-            <p>IDR 25k</p>
+          <div class="menu__card">
+            <img src="img/palm-sugar-coffe.jpg" alt="Palm Sugar Coffee" />
+            <div class="menu__card-body">
+              <h3>Palm Sugar Coffee</h3>
+              <p>
+                Manis alami gula aren berpadu dengan pahit lembut kopi,
+                menciptakan rasa hangat yang bikin nagih.
+              </p>
+              <p>IDR 25k</p>
+            </div>
           </div>
         </div>
       </div>
@@ -124,49 +125,49 @@
 
     <!-- Contact Section Start -->
     <section id="contact" class="contact">
-      <h2><span>Contact</span> Us</h2>
-      <p>
+      <h2 class="contact__title"><span>Contact</span> Us</h2>
+      <p class="contact__desc">
         Punya pertanyaan, saran, atau sekadar ingin ngobrol soal kopi? Jangan
         ragu untuk hubungi kami, ya ☕✨
       </p>
 
-      <form action="#" method="post" class="contact-form">
-        <div class="input-box">
-          <input type="text" name="name" required />
+      <form action="#" method="post" class="contact__form">
+        <div class="contact__input-box">
+          <input type="text" name="name" id="name" required />
           <label for="name">Username</label>
         </div>
 
-        <div class="input-box">
-          <input type="email" name="email" required />
+        <div class="contact__input-box">
+          <input type="email" name="email" id="email" required />
           <label for="email">Email</label>
         </div>
 
-        <div class="input-box">
-          <textarea name="message" rows="5" required></textarea>
+        <div class="contact__input-box">
+          <textarea name="message" id="message" rows="5" required></textarea>
           <label for="message">Tulis pesanmu di sini...</label>
         </div>
 
-        <button type="submit" class="btn">Kirim Pesan</button>
+        <button type="submit" class="contact__btn">Kirim Pesan</button>
       </form>
     </section>
     <!-- Contact Section End -->
 
     <!-- Footer Start -->
-    <footer>
-      <div class="socials">
+    <footer class="footer">
+      <div class="footer__socials">
         <a href="#"><i data-feather="instagram"></i></a>
         <a href="#"><i data-feather="facebook"></i></a>
         <a href="#"><i data-feather="twitter"></i></a>
       </div>
 
-      <div class="links">
+      <div class="footer__links">
         <a href="#home">Home</a>
         <a href="#about">Tentang Kami</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Kontak</a>
       </div>
 
-      <div class="credit">
+      <div class="footer__credit">
         <p>Created with ❤️ by <span>RoomCoffeeSenja</span> | &copy; 2025</p>
       </div>
     </footer>

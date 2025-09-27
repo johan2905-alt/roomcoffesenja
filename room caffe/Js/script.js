@@ -1,35 +1,47 @@
-// feather icons aktif
 feather.replace();
 
-// ambil elemen
-const navbarNav = document.querySelector('.navbar-nav');
+const navbarNav = document.querySelector('.navbar__nav');
 const hamburger = document.querySelector('#hamburger-menu');
 
-// toggle menu saat hamburger diklik
-hamburger.onclick = (e) => {
-  e.preventDefault(); // cegah reload
-  navbarNav.classList.toggle('active');
-};
+function toggleNavbar() {
+  navbarNav.classList.toggle('navbar__nav--active');
+  if (navbarNav.classList.contains('navbar__nav--active')) {
+    navbarNav.style.right = '0';
+  } else {
+    navbarNav.style.right = '-100%';
+  }
+}
 
-// klik di luar nav untuk menutup menu
-document.addEventListener('click', function (e) {
-  if (!navbarNav.contains(e.target) && !hamburger.contains(e.target)) {
-    navbarNav.classList.remove('active');
+if (hamburger && window.getComputedStyle(hamburger).display !== "none") {
+  hamburger.onclick = (e) => {
+    e.preventDefault(); // cegah reload
+    toggleNavbar();
+  };
+
+  document.addEventListener('click', function (e) {
+    if (!navbarNav.contains(e.target) && !hamburger.contains(e.target)) {
+      navbarNav.classList.remove('navbar__nav--active');
+      navbarNav.style.right = '-100%';
+    }
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 768) {
+    navbarNav.style.right = '-100%';
+    navbarNav.classList.remove('navbar__nav--active');
   }
 });
 
-
-const footer = document.querySelector("footer");
+const footer = document.querySelector(".footer");
 
 window.addEventListener("scroll", () => {
-  const scrollPosition = window.scrollY + window.innerHeight; 
+  const scrollPosition = window.scrollY + window.innerHeight;
   const pageHeight = document.body.offsetHeight;
 
-  // Kalau posisi scroll sudah mendekati bawah (misalnya 200px dari bawah)
   if (scrollPosition >= pageHeight - 200) {
-    footer.classList.add("show");
+    footer.classList.add("footer--show");
   } else {
-    footer.classList.remove("show");
+    footer.classList.remove("footer--show");
   }
 });
-
